@@ -1,0 +1,73 @@
+#LA RULETA, apuesta tus Antoniocoins y hazte millonario o pobre, todo depende de tu suerte.
+
+import time
+print("Bienvenido a la ruleta")
+time.sleep(1)
+print("Antes de nada: la ruleta puede resultar muy adictiva y conlleva riesgo de")
+time.sleep(1.5)
+print("perder mucho dinero, si no eres mayor de edad por favor cierra este")
+time.sleep(1.5)
+print("programa.")
+time.sleep(0.5)
+print("Si fallas perderás tu apuesta")
+time.sleep(1)
+print("Si aciertas duplicaras tu apuesta")
+time.sleep(1)
+print("Si aciertas apostando al CERO ganarás un 777%")
+time.sleep(1)
+print("El casino a tenido la bondad de prestarle 100 antoniocoins, aprovéchelos bien")
+time.sleep(1)
+a=0
+dinero = 100
+b="nose"
+for cosa in b:
+    print("...")
+    time.sleep(1)
+    print("Tienes esta cantidad de dinero ->", dinero)
+    time.sleep(1)
+    apuesta=input("¿Apuestas a PAR, IMPAR o CERO? -->")
+    time.sleep(0.8)
+    cuanto=int(input("¿Cuanto dinero quieres apostar?"))
+    if(cuanto > dinero):
+        cuanto=0
+        print("TRAMPOSO!!!, ESO NO SE PUEDE")
+
+    print("...")
+    import random
+    time.sleep(1)
+    resultado = random.randint(0, 36)
+    print("SALIÓ EL", resultado) 
+
+    if resultado == 0:
+        FINAL="CERO"
+    if resultado % 2 == 0 and resultado!=0:
+        FINAL="PAR"
+    if resultado % 2 != 0 and resultado!=0:
+        FINAL="IMPAR"
+    time.sleep(1)
+    print("Y EL", resultado, "ES", FINAL)
+    print("...")
+    
+    if(apuesta==FINAL) and (apuesta=="PAR"):
+        a= cuanto*2
+        print("HAS GANADO", int(a))
+        dinero+=int(a)
+
+    if(apuesta==FINAL) and (FINAL=="IMPAR"):
+        a= cuanto*2
+        print("HAS GANADO", int(a))
+        dinero+=int(a)
+
+    if(apuesta==FINAL) and (FINAL=="CERO"):
+        a= cuanto*14
+        print("JACKPOT!!", int(a))
+        dinero+=int(a)
+        
+    
+    if(apuesta!="PAR") and (apuesta!="IMPAR") and (apuesta!="CERO"):
+        print("No se qué es {", apuesta, "}")
+    
+    if(apuesta!=FINAL):
+        a= cuanto
+        print("HAS PERDIDO", int(a))
+        dinero-=int(a)
