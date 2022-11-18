@@ -1,0 +1,170 @@
+import random
+print("Estas en un lugar muy oscuro, parece una cueva. A lo lejos ves una luz que se acerca, es una persona")
+input("¿Cómo te llamas? --> ")
+print("¿Gustavo?,hola Gustavo, bienvenido al lugar en el que llevo más de 2 semanas encerrado. Al parecer has tenido la misma suerte que yo")
+preg1=input("1-¿2 semanas? , 2-¿Qué es este lugar? --> ")
+if preg1=="1":
+    print("Al igual que tú, me desperté un día aquí, sin ninguna explicación y desde entonces he estado buscando la manera de salir. Lo único que he encontrado es una puerta al fondo de este pasillo, desde donde se escuchan ruidos extraños, pero no me atrevo a entrar")
+if preg1=="2":
+    print("Ni yo lo sé seguro, un día me desperté aquí y desde entonces estoy intentando salir. Todo lo que sé es una cueva, pero no una cueva normal. Al fondo de este pasillo hay una puerta, no me he atrevido a abrirla, pero se oyen ruidos extraños del otro lado")
+preg2=input("1-Entrar , 2-Morir de hambre junto a un desconocido sospechoso --> ")
+if preg2=="1":
+        print("Detras de la puerta había una sala oscura y cuando has entrado te has quedado encerrado dentro")
+        gob=random.randint(1,3)
+        if gob==1:
+            print("De repente se han encendido unas luces y ves a un goblin con una daga delante tuyo. Tu única arma son tus poderosas lágrimas que llevas entrenando toda tu vida")
+        if gob==2:
+            print("De repente se han encendido unas luces y ves a dos goblins con una dagas delante tuyo. Tu única arma son tus poderosas lágrimas que llevas entrenando toda tu vida")
+        if gob==3:
+            print("De repente se han encendido unas luces y ves a dos goblins con una dagas delante tuyo. Tu única arma son tus poderosas lágrimas que llevas entrenando toda tu vida")
+        if gob==3:
+            print("De repente se han encendido unas luces y ves a tres goblins con una dagas delante tuyo. Tu única arma son tus poderosas lágrimas que llevas entrenando toda tu vida")
+        tuvida=100
+        gobvida=80*gob
+        seguir=True
+        while seguir==True:
+            tudam=random.randint(2,5)
+            gobdam=random.randint(1,3)
+            seguir=True
+            print("Tienes",tuvida,"de vida")
+            print("Los goblins tienen",gobvida,"de vida")
+            gob1=input("ATACAR/ESQUIVAR/HUIR --> ")
+            if gob1=="ATACAR":
+                tuvida=tuvida-5*gobdam
+                gobvida=gobvida-tudam*10
+            if gob1=="ESQUIVAR":
+                esq=random.randint(1,4)
+                if esq==1:
+                    tuvida=tuvida+0
+                if esq==2:
+                    tuvida=tuvida+0
+                if esq==3:
+                    tuvida=tuvida+0
+                if esq==4:
+                    tuvida=tuvida-5*gobdam
+            if gob1=="HUIR":
+                print("No puedes huir, estas encerrado")
+            if tuvida<=0:
+                seguir==False
+            if gobvida<=0 and tuvida>0:
+                seguir==False
+                tuvida=tuvida+50
+                print("Enhorabuena, has conseguido matar a el/los goblin(s)")
+                cofre1=input("Ha caído un cofre en el centro de la sala,¿lo abres?(SI/SI) --> ")
+                if cofre1=="SI":
+                        hab1=0
+                        drop1=random.randint(1,3)
+                        if drop1==1:
+                            print("Has encontrado una poción que te ha recuperado 50 de vida y una botella extraña. Eres muy torpe y se te ha caído a los ojos, lo que ha echo que ahora tus lágrimas hagan más daño")
+                            dañoextra=10
+                        if drop1==2:
+                            print("Has encontrado una poción que te ha recuperado 50 de vida y una especie de pergamino. Nada mas tocar el pergamino ha desaparecido y te ha otorgado una habilidad")
+                            dañoextra=0
+                            hab1=random.randint(1,3)
+                            if hab1==1:
+                                print("Ahora además de lágrimas, tambien disparas flemas, pero tienen un 75% de precisión")
+                            if hab1==2:
+                                print("Ahora tienes un porcentaje de disparar dos lágrimas a la vez")
+                                doslag=random.randint(1,2)
+                                if doslag==1:
+                                    dañoextra=30
+                                if doslag==2:
+                                    dañoextra=0
+                            if hab1==3:
+                                print("Ahora puedes utilizar un hechizo de curación que te restaura 50 de vida")
+                        if drop1==3:
+                            print("Has encontrado una poción que te ha recuperado 50 de vida y una bomba, que parece que hace mucho daño.")
+                            bombas=1
+                            dañoextra=0
+                puerta1=input("Han aparecido dos puertas enfrente tuyo,¿a cual entras?(1/2) --> ")
+                jefe1=random.randint(1,3)
+                if jefe1==1:
+                    print("Hay un troll gigante con una maza en el centro de la habitación")
+                    jef1vida=400
+                    jef1dam=4
+                if jefe1==2:
+                    print("Hay un caballero con armadura y una espada en el centro de la habitación")
+                    jef1vida=200
+                    jef1dam=6
+                if jefe1==3:
+                    print("Hay un candidato a delegado que después de 2 años de trabajo duro no ha conseguido ganar a Carlos Moreno, que no hace nada como delegado pero aun así le seguimos votando.")
+                    jef1vida=150
+                    jef1dam=8
+                
+                while seguir==True:
+                    seguir=True
+                    print("Tienes",tuvida,"de vida")
+                    print("El jefe tiene",jef1vida,"de vida")
+                    menu2=input("ATACAR/ESQUIVAR/HABILIDAD/OBJETO --> ")
+                    if menu2=="ATACAR":
+                        tudam2=random.randint(2,5)
+                        j1dam=random.randint(1,3)
+                        instakill=random.randint(1,5)
+                        if instakill==1 and jefe1==3:
+                            tuvida=tuvida-9999
+                            print("El candidato a delegado a utilizado su habilidad especial y ha destruído el planeta con un solo golpe")
+                        tudaño=tudam2*10+dañoextra
+                        tuvida=tuvida-jef1dam*j1dam
+                        jef1vida=jef1vida-tudaño
+                    if menu2=="ESQUIVAR":
+                        esq2=random.randint(1,4)
+                        if esq2==1:
+                            tuvida=tuvida+0
+                        if esq2==2:
+                            tuvida=tuvida+0
+                        if esq2==3:
+                            tuvida=tuvida+0
+                        if esq2==4:
+                            tuvida=tuvida-jef1dam*j1dam
+                    if menu2=="HABILIDAD":
+                        if hab1==1:
+                            flem=input("¿Deseas usar la habilidad de disparar flemas(S/N)? --> ")
+                            if flem=="S":
+                                probflem=random.randint(1,4)
+                                if probflem==1:
+                                    tuvida=tuvida-jef1dam*j1dam
+                                else:
+                                    tuvida=tuvida-jef1dam*j1dam
+                                    jef1vida=jef1vida-70
+                            if flem=="N":
+                                print("Entonces para qué lo eliges")
+                        if hab1==3:
+                            cur=input("¿Deseas usar la habilidad de curación(S/N)? --> ")
+                            if cur=="S":
+                                tuvida=tuvida-(jef1dam*j1dam)+50
+                                jef1vida=jef1vida+0
+                            else:
+                                tuvida=tuvida+0
+                                jef1vida=jef1vida+0
+                        if hab1==0 or hab1==2:
+                            print("No tienes ninguna habilidad disponible")
+                            tuvida=tuvida+0
+                            jef1vida=jef1vida+0
+                    if menu2=="OBJETO":
+                        if drop1==3:
+                            print("Tienes",bombas,"BOMBA(s) disponibles")
+                            obj=input("¿Qué objeto quieres usar? --> ")
+                            if obj=="BOMBA":
+                                tuvida=tuvida+0
+                                jef1vida=jef1vida-200
+                                print("La explosión ha echo que el jefe retroceda y no pueda atacar ")
+                        if drop1!=3 or bombas=0:
+                            print("No tienes ningún objeto")
+                    if tuvida<=0:
+                        seguir==False
+                        print("moriste")
+                    if jef1vida<=0 and tuvida>0:
+                        seguir=False
+                        print("ganaste")
+                    if tuvida>0:
+                        seguir:True
+                    if jef1vida>0:
+                        seguir=True
+            if tuvida>0:
+                seguir==True
+            if gobvida>0:
+                seguir==True
+
+            
+if preg2=="2":
+    print("El desconcocido con el que te habías encontrado resultó ser un asesino y te ha matado")
