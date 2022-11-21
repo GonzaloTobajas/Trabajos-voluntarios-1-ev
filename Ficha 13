@@ -1,0 +1,3 @@
+h=int(input("Cómo de alto --> "))
+for cont in range(1,h+1):
+    print(" "*(h-cont),"*"*cont*2)
