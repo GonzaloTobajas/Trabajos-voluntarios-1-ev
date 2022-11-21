@@ -1,0 +1,10 @@
+#Te preguta tu DNI y te dice si es verdadero o no.
+n=int(input("¿Dime el tu DNI(8 números) --> "))
+preg=input("¿Cuál es la letra de tu DNI --> ")
+palabra="TRWAGMYFPDXBNJZSQVHLCKE"
+letra=palabra[n%23]
+print("letra:",letra)
+if letra==preg:
+    print("El DNI es válido")
+else:
+    print("El DNI está mal")
