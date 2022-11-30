@@ -34,7 +34,7 @@ while True:
                 aNYY=input("-->")
                 if(aNYY=="Y"):
                     print(LINK_GANADA)
-                    link    
+                        
                 if(aNYY=="N"):
                     print("Así es cómo te ves ahora mismo:")
                     print(RATA) 
